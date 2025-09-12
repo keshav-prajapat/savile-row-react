@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import suitingImage from "@/assets/suiting.jpg";
+import originalSuiting from "@/assets/original-suiting.jpg";
 import jacketsImage from "@/assets/jackets.jpg";
 import outerwearImage from "@/assets/outerwear.jpg";
 import knitwearImage from "@/assets/knitwear.jpg";
@@ -30,7 +30,7 @@ export const ProductSection = () => {
         <div className="mb-16">
           <div className="relative">
             <img 
-              src={suitingImage}
+              src={originalSuiting}
               alt="Suiting Collection"
               className="w-full h-[70vh] object-cover"
             />

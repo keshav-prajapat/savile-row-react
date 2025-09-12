@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
-import londonImage from "@/assets/london-location.jpg";
-import newYorkImage from "@/assets/newyork-location.jpg";
-import trunkShowImage from "@/assets/trunk-show.jpg";
+import originalLondon from "@/assets/original-london.jpg";
+import originalNewYork from "@/assets/original-newyork.jpg";
+import originalTrunk from "@/assets/original-trunk.jpg";
 
 export const LocationsSection = () => {
   const locations = [
@@ -9,21 +9,21 @@ export const LocationsSection = () => {
       title: "LONDON",
       subtitle: "11 Savile Row",
       description: "Bespoke Tailoring",
-      image: londonImage,
+      image: originalLondon,
       link: "/bespoke-tailoring"
     },
     {
       title: "NEW YORK",
       subtitle: "W.57th St",
       description: "Bespoke Tailoring", 
-      image: newYorkImage,
+      image: originalNewYork,
       link: "/huntsman-on-w57th"
     },
     {
       title: "USA",
       subtitle: "Trunk Shows",
       description: "Dates & Locations",
-      image: trunkShowImage,
+      image: originalTrunk,
       link: "/u-s-a-trunk-shows"
     }
   ];

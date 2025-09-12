@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-image.jpg";
+import originalHero from "@/assets/original-hero.jpg";
 
 export const HeroSection = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
@@ -10,7 +10,7 @@ export const HeroSection = () => {
       {/* Background Image/Video */}
       <div className="absolute inset-0">
         <img 
-          src={heroImage}
+          src={originalHero}
           alt="Autumn-Winter 2025 Collection"
           className="w-full h-full object-cover"
         />
