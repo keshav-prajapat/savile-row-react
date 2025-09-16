@@ -2,13 +2,20 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import heroImage from "@/assets/hero-image.jpg";
+import suitingImage from "@/assets/suiting.jpg";
+import jacketsImage from "@/assets/jackets.jpg";
+import outerwearImage from "@/assets/outerwear.jpg";
+import knitwearImage from "@/assets/knitwear.jpg";
+import trunkShowImage from "@/assets/trunk-show.jpg";
+import womensImage from "@/assets/womens-bespoke.jpg";
 
 const ReadyToWear = () => {
   const collections = [
     {
       title: "Autumn/Winter 2024",
       subtitle: "Heritage Redefined",
-      image: "/placeholder.svg",
+      image: suitingImage,
       description: "Classic cuts meet contemporary sophistication in our latest ready-to-wear collection.",
       pieces: 24,
       featured: true
@@ -16,7 +23,7 @@ const ReadyToWear = () => {
     {
       title: "Spring/Summer 2024",
       subtitle: "Modern Gentleman",
-      image: "/placeholder.svg", 
+      image: trunkShowImage,
       description: "Lightweight fabrics and relaxed tailoring for the warmer months.",
       pieces: 18,
       featured: false
@@ -24,7 +31,7 @@ const ReadyToWear = () => {
     {
       title: "Core Collection",
       subtitle: "Timeless Essentials",
-      image: "/placeholder.svg",
+      image: womensImage,
       description: "Our signature pieces that form the foundation of every gentleman's wardrobe.",
       pieces: 32,
       featured: false
@@ -35,42 +42,42 @@ const ReadyToWear = () => {
     {
       name: "Suiting",
       description: "Impeccably tailored suits for every occasion",
-      image: "/placeholder.svg",
+      image: suitingImage,
       priceRange: "$2,500 - $4,200",
       items: 12
     },
     {
       name: "Jackets & Blazers", 
       description: "Versatile separates for modern living",
-      image: "/placeholder.svg",
+      image: jacketsImage,
       priceRange: "$1,800 - $3,200",
       items: 8
     },
     {
       name: "Outerwear",
       description: "Sophisticated protection from the elements",
-      image: "/placeholder.svg",
+      image: outerwearImage,
       priceRange: "$2,200 - $5,800",
       items: 6
     },
     {
       name: "Knitwear",
       description: "Luxurious cashmere and wool essentials",
-      image: "/placeholder.svg",
+      image: knitwearImage,
       priceRange: "$450 - $1,200",
       items: 15
     },
     {
       name: "Accessories",
       description: "The finishing touches that define style",
-      image: "/placeholder.svg",
+      image: trunkShowImage,
       priceRange: "$150 - $850",
       items: 22
     },
     {
       name: "Shirting",
       description: "Crisp cottons and refined linens",
-      image: "/placeholder.svg",
+      image: womensImage,
       priceRange: "$250 - $450", 
       items: 18
     }
@@ -84,7 +91,7 @@ const ReadyToWear = () => {
         <section className="relative h-[70vh] bg-muted/30">
           <div className="absolute inset-0 bg-gradient-to-r from-background/80 to-transparent z-10" />
           <img 
-            src="/placeholder.svg"
+            src={heroImage}
             alt="Ready-to-Wear Collection"
             className="w-full h-full object-cover"
           />
@@ -249,7 +256,7 @@ const ReadyToWear = () => {
               </div>
               <div className="relative">
                 <img 
-                  src="/placeholder.svg"
+                  src={suitingImage}
                   alt="Craftsman at work"
                   className="w-full aspect-[4/5] object-cover rounded-lg"
                 />
