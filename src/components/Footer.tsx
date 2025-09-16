@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
   const [email, setEmail] = useState('');
@@ -54,12 +55,12 @@ export const Footer = () => {
             <div>
               <h4 className="font-serif mb-4">Quick Links</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="/collections/suits" className="huntsman-link">Suiting</a></li>
-                <li><a href="/collections/jackets" className="huntsman-link">Jackets</a></li>
-                <li><a href="/collections/outerwear" className="huntsman-link">Outerwear</a></li>
-                <li><a href="/collections/knitwear" className="huntsman-link">Knitwear</a></li>
-                <li><a href="/pages/bespoke-tailoring" className="huntsman-link">Bespoke</a></li>
-                <li><a href="/blogs/journal" className="huntsman-link">Journal</a></li>
+                <li><Link to="/suiting" className="huntsman-link">Suiting</Link></li>
+                <li><Link to="/jackets" className="huntsman-link">Jackets</Link></li>
+                <li><Link to="/outerwear" className="huntsman-link">Outerwear</Link></li>
+                <li><Link to="/knitwear" className="huntsman-link">Knitwear</Link></li>
+                <li><Link to="/bespoke" className="huntsman-link">Bespoke</Link></li>
+                <li><Link to="/journal" className="huntsman-link">Journal</Link></li>
               </ul>
             </div>
 
@@ -67,12 +68,12 @@ export const Footer = () => {
             <div>
               <h4 className="font-serif mb-4">Customer Service</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="/pages/how-may-we-help-you-contact-us" className="huntsman-link">Locations</a></li>
-                <li><a href="/pages/how-may-we-help-you-faqs" className="huntsman-link">FAQs</a></li>
-                <li><a href="/pages/contact" className="huntsman-link">Book an Appointment</a></li>
-                <li><a href="/pages/size-guide" className="huntsman-link">Size Guide</a></li>
-                <li><a href="/pages/shipping" className="huntsman-link">Shipping & Returns</a></li>
-                <li><a href="/pages/care-instructions" className="huntsman-link">Care Instructions</a></li>
+                <li><Link to="/locations" className="huntsman-link">Locations</Link></li>
+                <li><Link to="/faqs" className="huntsman-link">FAQs</Link></li>
+                <li><Link to="/book-appointment" className="huntsman-link">Book an Appointment</Link></li>
+                <li><Link to="/size-guide" className="huntsman-link">Size Guide</Link></li>
+                <li><Link to="/shipping" className="huntsman-link">Shipping & Returns</Link></li>
+                <li><Link to="/care-instructions" className="huntsman-link">Care Instructions</Link></li>
               </ul>
             </div>
 

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Menu, Search, User, ShoppingBag, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,10 +22,10 @@ export const Header = () => {
 
             {/* Center: Logo */}
             <div className="flex-1 flex justify-center">
-              <div className="text-center">
+              <Link to="/" className="text-center">
                 <h1 className="text-2xl font-serif tracking-wider">HUNTSMAN</h1>
                 <p className="text-xs text-muted-foreground tracking-wider">ESTABLISHED 1849</p>
-              </div>
+              </Link>
             </div>
 
             {/* Right: Icons and Currency */}
@@ -78,21 +79,21 @@ export const Header = () => {
           
           <nav className="p-4 space-y-6">
             <div className="space-y-4">
-              <a href="#" className="block text-lg font-serif hover:text-primary transition-colors">
-                Ready-to-Wear
-              </a>
-              <a href="#" className="block text-lg font-serif hover:text-primary transition-colors">
+              <Link to="/suiting" className="block text-lg font-serif hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+                Suiting
+              </Link>
+              <Link to="/bespoke" className="block text-lg font-serif hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
                 Bespoke
-              </a>
-              <a href="#" className="block text-lg font-serif hover:text-primary transition-colors">
-                The Company
-              </a>
-              <a href="#" className="block text-lg font-serif hover:text-primary transition-colors">
-                Locations
-              </a>
-              <a href="#" className="block text-lg font-serif hover:text-primary transition-colors">
+              </Link>
+              <Link to="/journal" className="block text-lg font-serif hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
                 Journal
-              </a>
+              </Link>
+              <Link to="/locations" className="block text-lg font-serif hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+                Locations
+              </Link>
+              <Link to="/faqs" className="block text-lg font-serif hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+                FAQs
+              </Link>
             </div>
             
             <div className="pt-6 border-t space-y-4">
@@ -101,9 +102,11 @@ export const Header = () => {
                 <p className="text-sm text-muted-foreground">+1 646 590 2595</p>
                 <p className="text-sm text-muted-foreground">usa@huntsmansavilerow.com</p>
               </div>
-              <Button variant="outline" className="w-full">
-                Book an appointment
-              </Button>
+              <Link to="/book-appointment" onClick={() => setIsMenuOpen(false)}>
+                <Button variant="outline" className="w-full">
+                  Book an appointment
+                </Button>
+              </Link>
             </div>
           </nav>
         </div>
