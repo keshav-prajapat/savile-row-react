@@ -79,20 +79,20 @@ export const Header = () => {
           
           <nav className="p-4 space-y-6">
             <div className="space-y-4">
-              <Link to="/suiting" className="block text-lg font-serif hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-                Suiting
+              <Link to="/ready-to-wear" className="block text-lg font-serif hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+                Ready-to-Wear
               </Link>
               <Link to="/bespoke" className="block text-lg font-serif hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
                 Bespoke
               </Link>
-              <Link to="/journal" className="block text-lg font-serif hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-                Journal
+              <Link to="/company" className="block text-lg font-serif hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+                The Company
               </Link>
               <Link to="/locations" className="block text-lg font-serif hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
                 Locations
               </Link>
-              <Link to="/faqs" className="block text-lg font-serif hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
-                FAQs
+              <Link to="/journal" className="block text-lg font-serif hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+                Journal
               </Link>
             </div>
             
