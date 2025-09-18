@@ -3,9 +3,13 @@ import { Menu, Search, User, ShoppingBag, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useScrollTrigger } from '@/hooks/useParallax';
+import { SearchModal } from './SearchModal';
+import { AuthModal } from './auth/AuthModal';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isAuthOpen, setIsAuthOpen] = useState(false);
   const { isTriggered } = useScrollTrigger(50);
 
   return (
@@ -43,10 +47,16 @@ export const Header = () => {
                 <option>GBP £</option>
                 <option>EUR €</option>
               </select>
-              <button className="p-2 hover:bg-muted rounded-sm transition-colors">
+              <button 
+                className="p-2 hover:bg-muted rounded-sm transition-colors"
+                onClick={() => setIsSearchOpen(true)}
+              >
                 <Search className="h-5 w-5" />
               </button>
-              <button className="p-2 hover:bg-muted rounded-sm transition-colors">
+              <button 
+                className="p-2 hover:bg-muted rounded-sm transition-colors"
+                onClick={() => setIsAuthOpen(true)}
+              >
                 <User className="h-5 w-5" />
               </button>
               <button className="p-2 hover:bg-muted rounded-sm transition-colors relative">
@@ -119,6 +129,12 @@ export const Header = () => {
           </nav>
         </div>
       )}
+
+      {/* Search Modal */}
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      
+      {/* Auth Modal */}
+      <AuthModal isOpen={isAuthOpen} onClose={() => setIsAuthOpen(false)} />
     </>
   );
 };
