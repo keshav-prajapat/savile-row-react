@@ -2,15 +2,23 @@ import { useState } from 'react';
 import { Menu, Search, User, ShoppingBag, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useScrollTrigger } from '@/hooks/useParallax';
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isTriggered } = useScrollTrigger(50);
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isTriggered 
+          ? 'bg-background/98 backdrop-blur-md border-b shadow-lg' 
+          : 'bg-background/80 backdrop-blur-sm'
+      }`}>
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
+          <div className={`flex items-center justify-between transition-all duration-500 ${
+            isTriggered ? 'h-14' : 'h-16'
+          }`}>
             {/* Left: Menu button */}
             <button 
               onClick={() => setIsMenuOpen(true)}

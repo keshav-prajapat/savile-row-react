@@ -10,7 +10,7 @@ import { NewsletterModal } from "@/components/NewsletterModal";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background parallax-container">
       <Header />
       <main>
         <HeroSection />

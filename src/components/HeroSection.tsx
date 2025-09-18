@@ -1,30 +1,43 @@
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
+import { useParallax } from '@/hooks/useParallax';
 import originalHero from "@/assets/original-hero.jpg";
 
 export const HeroSection = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const scrollY = useParallax();
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image/Video */}
-      <div className="absolute inset-0">
+      <div 
+        className="absolute inset-0"
+        style={{
+          transform: `translateY(${scrollY * 0.5}px)`,
+        }}
+      >
         <img 
           src={originalHero}
           alt="Autumn-Winter 2025 Collection"
-          className="w-full h-full object-cover"
+          className="w-full h-[120%] object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif tracking-wider mb-8">
+      <div 
+        className="relative z-10 text-center text-white max-w-4xl mx-auto px-4"
+        style={{
+          transform: `translateY(${scrollY * 0.2}px)`,
+          opacity: Math.max(0, 1 - scrollY / 800)
+        }}
+      >
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif tracking-wider mb-8 animate-fade-in">
           AUTUMN-WINTER 2025 COLLECTION
         </h1>
         <Button 
           variant="outline" 
-          className="huntsman-button border-white text-white hover:bg-white hover:text-black"
+          className="huntsman-button border-white text-white hover:bg-white hover:text-black animate-fade-in animation-delay-300"
         >
           SHOP THE COLLECTION
         </Button>
