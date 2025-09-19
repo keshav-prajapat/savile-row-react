@@ -71,13 +71,13 @@ export const Header = () => {
       </header>
 
       {/* Contact Us Sidebar */}
-      <div className="fixed right-0 top-1/2 -translate-y-1/2 z-40">
-        <div className="bg-red-600 text-white p-2 rounded-l-lg">
+      <Link to="/contact" className="fixed right-0 top-1/2 -translate-y-1/2 z-40">
+        <div className="bg-red-600 text-white p-2 rounded-l-lg hover:bg-red-700 transition-colors">
           <div className="writing-mode-vertical text-sm font-medium tracking-wider">
             CONTACT US
           </div>
         </div>
-      </div>
+      </Link>
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
@@ -111,6 +111,9 @@ export const Header = () => {
               </Link>
               <Link to="/journal" className="block text-lg font-serif hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
                 Journal
+              </Link>
+              <Link to="/contact" className="block text-lg font-serif hover:text-primary transition-colors" onClick={() => setIsMenuOpen(false)}>
+                Contact Us
               </Link>
             </div>
             

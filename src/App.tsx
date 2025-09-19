@@ -15,6 +15,7 @@ import Bespoke from "./pages/Bespoke";
 import Journal from "./pages/Journal";
 import Locations from "./pages/Locations";
 import FAQs from "./pages/FAQs";
+import Contact from "./pages/Contact";
 import BookAppointment from "./pages/BookAppointment";
 import SizeGuide from "./pages/SizeGuide";
 import Shipping from "./pages/Shipping";
@@ -40,6 +41,7 @@ const App = () => (
           <Route path="/journal" element={<Journal />} />
           <Route path="/locations" element={<Locations />} />
           <Route path="/faqs" element={<FAQs />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/book-appointment" element={<BookAppointment />} />
           <Route path="/size-guide" element={<SizeGuide />} />
           <Route path="/shipping" element={<Shipping />} />

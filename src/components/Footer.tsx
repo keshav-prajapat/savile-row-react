@@ -68,6 +68,7 @@ export const Footer = () => {
             <div>
               <h4 className="font-serif mb-4">Customer Service</h4>
               <ul className="space-y-2 text-sm">
+                <li><Link to="/contact" className="huntsman-link">Contact Us</Link></li>
                 <li><Link to="/locations" className="huntsman-link">Locations</Link></li>
                 <li><Link to="/faqs" className="huntsman-link">FAQs</Link></li>
                 <li><Link to="/book-appointment" className="huntsman-link">Book an Appointment</Link></li>
