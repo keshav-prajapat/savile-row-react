@@ -16,6 +16,7 @@ import Journal from "./pages/Journal";
 import Locations from "./pages/Locations";
 import FAQs from "./pages/FAQs";
 import Contact from "./pages/Contact";
+import Admin from "./pages/Admin";
 import BookAppointment from "./pages/BookAppointment";
 import SizeGuide from "./pages/SizeGuide";
 import Shipping from "./pages/Shipping";
@@ -42,6 +43,7 @@ const App = () => (
           <Route path="/locations" element={<Locations />} />
           <Route path="/faqs" element={<FAQs />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/admin" element={<Admin />} />
           <Route path="/book-appointment" element={<BookAppointment />} />
           <Route path="/size-guide" element={<SizeGuide />} />
           <Route path="/shipping" element={<Shipping />} />
