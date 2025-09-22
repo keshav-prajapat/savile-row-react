@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ScrollAnimationWrapper } from "@/components/ScrollAnimationWrapper";
 import { useParallax } from "@/hooks/useParallax";
+import { Link } from "react-router-dom";
 import originalSuiting from "@/assets/original-suiting.jpg";
 import jacketsImage from "@/assets/jackets.jpg";
 import outerwearImage from "@/assets/outerwear.jpg";
@@ -12,17 +13,17 @@ export const ProductSection = () => {
     {
       title: "JACKETS",
       image: jacketsImage,
-      link: "/collections/jackets"
+      link: "/jackets"
     },
     {
       title: "OUTERWEAR", 
       image: outerwearImage,
-      link: "/collections/outerwear"
+      link: "/outerwear"
     },
     {
       title: "KNITWEAR",
       image: knitwearImage,
-      link: "/collections/knitwear"
+      link: "/knitwear"
     }
   ];
 
@@ -51,12 +52,14 @@ export const ProductSection = () => {
                   <p className="text-lg mb-8 leading-relaxed">
                     Cut in the Huntsman House silhouette, our ready-to-wear suits are designed for the discerning gentleman who values both time and tradition.
                   </p>
-                  <Button 
-                    variant="outline" 
-                    className="huntsman-button border-white text-white hover:bg-white hover:text-black"
-                  >
-                    SHOP NOW
-                  </Button>
+                  <Link to="/suiting">
+                    <Button 
+                      variant="outline" 
+                      className="huntsman-button border-white text-white hover:bg-white hover:text-black"
+                    >
+                      SHOP NOW
+                    </Button>
+                  </Link>
                 </div>
               </ScrollAnimationWrapper>
             </div>
@@ -72,30 +75,32 @@ export const ProductSection = () => {
                 animationType="scale-in"
                 delay={index * 150}
               >
-                <div 
-                  className="group cursor-pointer hover-parallax"
-                  style={{
-                    transform: `translateY(${scrollY * (0.03 + index * 0.01)}px)`,
-                  }}
-                >
-                  <div className="relative overflow-hidden">
-                    <img 
-                      src={product.image}
-                      alt={product.title}
-                      className="w-full aspect-[4/5] object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
-                    <div className="absolute bottom-6 left-6 text-white">
-                      <h3 className="text-2xl font-serif mb-4">{product.title}</h3>
-                      <Button 
-                        variant="ghost" 
-                        className="huntsman-button border-white text-white hover:bg-white hover:text-black p-0 px-6"
-                      >
-                        SHOP NOW
-                      </Button>
+                <Link to={product.link} className="block">
+                  <div 
+                    className="group cursor-pointer hover-parallax"
+                    style={{
+                      transform: `translateY(${scrollY * (0.03 + index * 0.01)}px)`,
+                    }}
+                  >
+                    <div className="relative overflow-hidden">
+                      <img 
+                        src={product.image}
+                        alt={product.title}
+                        className="w-full aspect-[4/5] object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
+                      <div className="absolute bottom-6 left-6 text-white">
+                        <h3 className="text-2xl font-serif mb-4">{product.title}</h3>
+                        <Button 
+                          variant="ghost" 
+                          className="huntsman-button border-white text-white hover:bg-white hover:text-black p-0 px-6"
+                        >
+                          SHOP NOW
+                        </Button>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </ScrollAnimationWrapper>
             ))}
           </div>

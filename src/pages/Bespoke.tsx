@@ -1,6 +1,8 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import bespokeHero from "@/assets/bespoke-hero.jpg";
 
 const Bespoke = () => {
   return (
@@ -14,7 +16,7 @@ const Bespoke = () => {
             <div className="grid md:grid-cols-2 gap-12 mb-16">
               <div>
                 <img 
-                  src="/placeholder.svg" 
+                  src={bespokeHero} 
                   alt="Bespoke Tailoring Process"
                   className="w-full aspect-[3/4] object-cover rounded-lg"
                 />
@@ -31,9 +33,11 @@ const Bespoke = () => {
                   garments that fit perfectly and reflect your personal style. The bespoke process 
                   typically takes 12-16 weeks and includes multiple fittings.
                 </p>
-                <Button className="w-full md:w-auto">
-                  Book Consultation
-                </Button>
+                <Link to="/book-appointment">
+                  <Button className="w-full md:w-auto">
+                    Book Consultation
+                  </Button>
+                </Link>
               </div>
             </div>
 

@@ -1,5 +1,9 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import knitwearHero from "@/assets/knitwear.jpg";
+import cashmereSweater from "@/assets/cashmere-sweater.jpg";
+import woolCardigan from "@/assets/wool-cardigan.jpg";
+import cottonPolo from "@/assets/cotton-polo.jpg";
 
 const Knitwear = () => {
   return (
@@ -13,7 +17,7 @@ const Knitwear = () => {
             <div className="grid md:grid-cols-2 gap-12 mb-16">
               <div>
                 <img 
-                  src="/placeholder.svg" 
+                  src={knitwearHero} 
                   alt="Huntsman Knitwear"
                   className="w-full aspect-[3/4] object-cover rounded-lg"
                 />
@@ -44,7 +48,7 @@ const Knitwear = () => {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
                 <img 
-                  src="/placeholder.svg" 
+                  src={cashmereSweater} 
                   alt="Cashmere Sweater"
                   className="w-full aspect-square object-cover rounded-lg mb-4"
                 />
@@ -53,7 +57,7 @@ const Knitwear = () => {
               </div>
               <div className="text-center">
                 <img 
-                  src="/placeholder.svg" 
+                  src={woolCardigan} 
                   alt="Wool Cardigan"
                   className="w-full aspect-square object-cover rounded-lg mb-4"
                 />
@@ -62,7 +66,7 @@ const Knitwear = () => {
               </div>
               <div className="text-center">
                 <img 
-                  src="/placeholder.svg" 
+                  src={cottonPolo} 
                   alt="Cotton Polo"
                   className="w-full aspect-square object-cover rounded-lg mb-4"
                 />

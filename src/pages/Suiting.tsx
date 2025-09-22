@@ -1,5 +1,9 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import suitingHero from "@/assets/suiting.jpg";
+import businessSuit from "@/assets/business-suit.jpg";
+import eveningWear from "@/assets/evening-wear.jpg";
+import countrySuit from "@/assets/country-suit.jpg";
 
 const Suiting = () => {
   return (
@@ -13,7 +17,7 @@ const Suiting = () => {
             <div className="grid md:grid-cols-2 gap-12 mb-16">
               <div>
                 <img 
-                  src="/placeholder.svg" 
+                  src={suitingHero} 
                   alt="Huntsman Suit"
                   className="w-full aspect-[3/4] object-cover rounded-lg"
                 />
@@ -45,7 +49,7 @@ const Suiting = () => {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
                 <img 
-                  src="/placeholder.svg" 
+                  src={businessSuit} 
                   alt="Business Suit"
                   className="w-full aspect-square object-cover rounded-lg mb-4"
                 />
@@ -54,7 +58,7 @@ const Suiting = () => {
               </div>
               <div className="text-center">
                 <img 
-                  src="/placeholder.svg" 
+                  src={eveningWear} 
                   alt="Evening Wear"
                   className="w-full aspect-square object-cover rounded-lg mb-4"
                 />
@@ -63,7 +67,7 @@ const Suiting = () => {
               </div>
               <div className="text-center">
                 <img 
-                  src="/placeholder.svg" 
+                  src={countrySuit} 
                   alt="Country Suits"
                   className="w-full aspect-square object-cover rounded-lg mb-4"
                 />

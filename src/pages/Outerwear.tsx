@@ -1,5 +1,9 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import outerwearHero from "@/assets/outerwear.jpg";
+import overcoat from "@/assets/overcoat.jpg";
+import raincoat from "@/assets/raincoat.jpg";
+import fieldJacket from "@/assets/field-jacket.jpg";
 
 const Outerwear = () => {
   return (
@@ -13,7 +17,7 @@ const Outerwear = () => {
             <div className="grid md:grid-cols-2 gap-12 mb-16">
               <div>
                 <img 
-                  src="/placeholder.svg" 
+                  src={outerwearHero} 
                   alt="Huntsman Outerwear"
                   className="w-full aspect-[3/4] object-cover rounded-lg"
                 />
@@ -44,7 +48,7 @@ const Outerwear = () => {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
                 <img 
-                  src="/placeholder.svg" 
+                  src={overcoat} 
                   alt="Overcoat"
                   className="w-full aspect-square object-cover rounded-lg mb-4"
                 />
@@ -53,7 +57,7 @@ const Outerwear = () => {
               </div>
               <div className="text-center">
                 <img 
-                  src="/placeholder.svg" 
+                  src={raincoat} 
                   alt="Raincoat"
                   className="w-full aspect-square object-cover rounded-lg mb-4"
                 />
@@ -62,7 +66,7 @@ const Outerwear = () => {
               </div>
               <div className="text-center">
                 <img 
-                  src="/placeholder.svg" 
+                  src={fieldJacket} 
                   alt="Field Jacket"
                   className="w-full aspect-square object-cover rounded-lg mb-4"
                 />

@@ -1,20 +1,21 @@
 import { ScrollAnimationWrapper } from "@/components/ScrollAnimationWrapper";
+import { Link } from "react-router-dom";
 
 export const HeritageSection = () => {
   const sections = [
     {
       title: "HERITAGE",
-      link: "/pages/the-company",
+      link: "/company",
       buttonText: "DISCOVER"
     },
     {
       title: "WORLD OF HUNTSMAN", 
-      link: "/pages/world-of-huntsman",
+      link: "/locations",
       buttonText: "ENTER"
     },
     {
       title: "BESPOKE LIFESTYLE",
-      link: "/pages/huntsman-bespoke-lifestyle", 
+      link: "/bespoke", 
       buttonText: "DISCOVER"
     }
   ];
@@ -34,12 +35,12 @@ export const HeritageSection = () => {
                   <h2 className="text-3xl font-serif mb-8 tracking-wider">
                     {section.title}
                   </h2>
-                  <a 
-                    href={section.link}
+                  <Link 
+                    to={section.link}
                     className="huntsman-button inline-block border-foreground text-foreground hover:bg-foreground hover:text-background"
                   >
                     {section.buttonText}
-                  </a>
+                  </Link>
                 </div>
               </ScrollAnimationWrapper>
             ))}
