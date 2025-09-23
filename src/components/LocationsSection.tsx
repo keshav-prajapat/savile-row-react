@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { ScrollAnimationWrapper } from "@/components/ScrollAnimationWrapper";
-import { useParallax } from "@/hooks/useParallax";
+import { ParallaxImage } from "@/components/ParallaxImage";
 import { Link } from "react-router-dom";
 import originalLondon from "@/assets/original-london.jpg";
 import originalNewYork from "@/assets/original-newyork.jpg";
 import originalTrunk from "@/assets/original-trunk.jpg";
 
 export const LocationsSection = () => {
-  const scrollY = useParallax();
   const locations = [
     {
       title: "LONDON",
@@ -45,18 +44,13 @@ export const LocationsSection = () => {
               >
                 <Link to={location.link} className="block">
                   <div className="group cursor-pointer hover-parallax">
-                    <div 
-                      className="relative overflow-hidden mb-4"
-                      style={{
-                        transform: `translateY(${scrollY * (0.05 + index * 0.02)}px)`,
-                      }}
+                    <ParallaxImage
+                      src={location.image}
+                      alt={`${location.title} Location`}
+                      className="aspect-[4/3] rounded-lg mb-4"
+                      parallaxOffset={0.05 + index * 0.02}
                     >
-                      <img 
-                        src={location.image}
-                        alt={`${location.title} Location`}
-                        className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
+                      <div className="bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
                       <div className="absolute top-6 left-6 text-white">
                         <p className="text-sm font-light tracking-wider">OUR LOCATIONS</p>
                       </div>
@@ -71,7 +65,7 @@ export const LocationsSection = () => {
                           DISCOVER NOW
                         </Button>
                       </div>
-                    </div>
+                    </ParallaxImage>
                   </div>
                 </Link>
               </ScrollAnimationWrapper>

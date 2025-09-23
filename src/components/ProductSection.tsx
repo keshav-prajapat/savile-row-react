@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ScrollAnimationWrapper } from "@/components/ScrollAnimationWrapper";
-import { useParallax } from "@/hooks/useParallax";
+import { ParallaxImage } from "@/components/ParallaxImage";
 import { Link } from "react-router-dom";
 import originalSuiting from "@/assets/original-suiting.jpg";
 import jacketsImage from "@/assets/jackets.jpg";
@@ -8,7 +8,6 @@ import outerwearImage from "@/assets/outerwear.jpg";
 import knitwearImage from "@/assets/knitwear.jpg";
 
 export const ProductSection = () => {
-  const scrollY = useParallax();
   const products = [
     {
       title: "JACKETS",
@@ -33,16 +32,13 @@ export const ProductSection = () => {
         {/* Suiting Hero */}
         <ScrollAnimationWrapper animationType="scale-in">
           <div className="mb-16">
-            <div className="relative overflow-hidden">
-              <img 
-                src={originalSuiting}
-                alt="Suiting Collection"
-                className="w-full h-[70vh] object-cover"
-                style={{
-                  transform: `translateY(${scrollY * 0.2}px)`,
-                }}
-              />
-              <div className="absolute inset-0 bg-black/30" />
+            <ParallaxImage
+              src={originalSuiting}
+              alt="Suiting Collection"
+              className="h-[70vh] rounded-lg"
+              parallaxOffset={0.2}
+            >
+              <div className="bg-black/30" />
               <ScrollAnimationWrapper 
                 animationType="slide-left"
                 delay={300}
@@ -62,7 +58,7 @@ export const ProductSection = () => {
                   </Link>
                 </div>
               </ScrollAnimationWrapper>
-            </div>
+            </ParallaxImage>
           </div>
         </ScrollAnimationWrapper>
 
@@ -76,19 +72,14 @@ export const ProductSection = () => {
                 delay={index * 150}
               >
                 <Link to={product.link} className="block">
-                  <div 
-                    className="group cursor-pointer hover-parallax"
-                    style={{
-                      transform: `translateY(${scrollY * (0.03 + index * 0.01)}px)`,
-                    }}
-                  >
-                    <div className="relative overflow-hidden">
-                      <img 
-                        src={product.image}
-                        alt={product.title}
-                        className="w-full aspect-[4/5] object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
+                  <div className="group cursor-pointer hover-parallax">
+                    <ParallaxImage
+                      src={product.image}
+                      alt={product.title}
+                      className="aspect-[4/5] rounded-lg"
+                      parallaxOffset={0.03 + index * 0.01}
+                    >
+                      <div className="bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
                       <div className="absolute bottom-6 left-6 text-white">
                         <h3 className="text-2xl font-serif mb-4">{product.title}</h3>
                         <Button 
@@ -98,7 +89,7 @@ export const ProductSection = () => {
                           SHOP NOW
                         </Button>
                       </div>
-                    </div>
+                    </ParallaxImage>
                   </div>
                 </Link>
               </ScrollAnimationWrapper>

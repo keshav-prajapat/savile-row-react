@@ -1,25 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { ScrollAnimationWrapper } from "@/components/ScrollAnimationWrapper";
-import { useParallax } from "@/hooks/useParallax";
+import { ParallaxImage } from "@/components/ParallaxImage";
 import { Link } from "react-router-dom";
 import womensBespokeImage from "@/assets/womens-bespoke.jpg";
 
 export const WomenswearSection = () => {
-  const scrollY = useParallax();
   return (
     <section className="py-16 bg-background parallax-container">
       <div className="container mx-auto px-4">
         <ScrollAnimationWrapper animationType="scale-in">
-          <div className="relative overflow-hidden">
-            <img 
-              src={womensBespokeImage}
-              alt="Bespoke Womenswear"
-              className="w-full h-[60vh] object-cover"
-              style={{
-                transform: `translateY(${scrollY * 0.15}px)`,
-              }}
-            />
-            <div className="absolute inset-0 bg-black/40" />
+          <ParallaxImage
+            src={womensBespokeImage}
+            alt="Bespoke Womenswear"
+            className="h-[60vh] rounded-lg"
+            parallaxOffset={0.15}
+          >
+            <div className="bg-black/40" />
             <ScrollAnimationWrapper 
               animationType="slide-left"
               delay={300}
@@ -41,7 +37,7 @@ export const WomenswearSection = () => {
                 </Link>
               </div>
             </ScrollAnimationWrapper>
-          </div>
+          </ParallaxImage>
         </ScrollAnimationWrapper>
       </div>
     </section>

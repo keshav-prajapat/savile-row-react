@@ -5,6 +5,7 @@ import { ProductSection } from "@/components/ProductSection";
 import { HeritageSection } from "@/components/HeritageSection";
 import { JournalSection } from "@/components/JournalSection";
 import { WomenswearSection } from "@/components/WomenswearSection";
+import { MobileSlider } from "@/components/MobileSlider";
 import { Footer } from "@/components/Footer";
 import { NewsletterModal } from "@/components/NewsletterModal";
 
@@ -16,9 +17,13 @@ const Index = () => {
         <HeroSection />
         <LocationsSection />
         <ProductSection />
-        <HeritageSection />
-        <JournalSection />
-        <WomenswearSection />
+        
+        {/* Last three sections with mobile slider */}
+        <MobileSlider className="space-y-0">
+          <HeritageSection />
+          <JournalSection />
+          <WomenswearSection />
+        </MobileSlider>
       </main>
       <Footer />
       <NewsletterModal />

@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { ScrollAnimationWrapper } from "@/components/ScrollAnimationWrapper";
+import { ParallaxImage } from "@/components/ParallaxImage";
 
 export const JournalSection = () => {
   const articles = [
@@ -37,46 +39,57 @@ export const JournalSection = () => {
   return (
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-serif text-center mb-12 tracking-wider">
-          The Huntsman Journal
-        </h2>
+        <ScrollAnimationWrapper animationType="fade-up">
+          <h2 className="text-3xl font-serif text-center mb-12 tracking-wider">
+            The Huntsman Journal
+          </h2>
+        </ScrollAnimationWrapper>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {articles.map((article, index) => (
-            <article key={index} className="group cursor-pointer">
-              <div className="relative overflow-hidden mb-4">
-                <img 
+            <ScrollAnimationWrapper 
+              key={index} 
+              animationType="scale-in"
+              delay={index * 100}
+            >
+              <article className="group cursor-pointer">
+                <ParallaxImage
                   src={article.image}
                   alt={article.title}
-                  className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="space-y-3">
-                <h3 className="text-lg font-serif leading-tight group-hover:text-primary transition-colors">
-                  {article.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {article.subtitle}
-                </p>
-                <a 
-                  href={article.link}
-                  className="huntsman-link text-sm inline-block"
+                  className="aspect-[4/3] rounded-lg mb-4"
+                  parallaxOffset={0.02 + index * 0.01}
                 >
-                  Read More
-                </a>
-              </div>
-            </article>
+                  <div className="bg-transparent group-hover:bg-black/10 transition-colors duration-300" />
+                </ParallaxImage>
+                <div className="space-y-3">
+                  <h3 className="text-lg font-serif leading-tight group-hover:text-primary transition-colors">
+                    {article.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {article.subtitle}
+                  </p>
+                  <a 
+                    href={article.link}
+                    className="huntsman-link text-sm inline-block"
+                  >
+                    Read More
+                  </a>
+                </div>
+              </article>
+            </ScrollAnimationWrapper>
           ))}
         </div>
         
-        <div className="text-center">
-          <a 
-            href="/blogs/journal"
-            className="huntsman-button border-foreground text-foreground hover:bg-foreground hover:text-background"
-          >
-            More Articles
-          </a>
-        </div>
+        <ScrollAnimationWrapper animationType="fade-up">
+          <div className="text-center">
+            <a 
+              href="/blogs/journal"
+              className="huntsman-button border-foreground text-foreground hover:bg-foreground hover:text-background"
+            >
+              More Articles
+            </a>
+          </div>
+        </ScrollAnimationWrapper>
       </div>
     </section>
   );
