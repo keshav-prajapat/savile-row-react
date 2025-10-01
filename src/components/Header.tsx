@@ -75,8 +75,8 @@ export const Header = () => {
     <>
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isTriggered 
-          ? 'bg-background/98 backdrop-blur-md border-b shadow-lg' 
-          : 'bg-background/80 backdrop-blur-sm'
+          ? 'bg-white border-b shadow-lg' 
+          : 'bg-transparent'
       }`}>
         <div className="container mx-auto px-4">
           <div className={`flex items-center justify-between transition-all duration-500 ${
@@ -86,10 +86,11 @@ export const Header = () => {
             <div className="flex items-center space-x-4">
               <button 
                 onClick={() => setIsMenuOpen(true)}
-                className="p-2 hover:bg-muted rounded-sm transition-colors"
+                className="flex items-center space-x-2 p-2 hover:bg-muted rounded-sm transition-colors"
                 aria-label="Open menu"
               >
                 <Menu className="h-5 w-5" />
+                <span className="text-sm font-medium">Menu</span>
               </button>
               {!isMobile && (
                 <button 
@@ -190,9 +191,10 @@ export const Header = () => {
               </div>
               <button 
                 onClick={() => setIsMenuOpen(false)}
-                className="p-2 hover:bg-muted rounded-sm transition-colors"
+                className="flex items-center space-x-2 p-2 hover:bg-muted rounded-sm transition-colors"
               >
                 <X className="h-5 w-5" />
+                <span className="text-sm font-medium">Close</span>
               </button>
             </div>
             
