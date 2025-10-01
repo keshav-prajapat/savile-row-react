@@ -2,9 +2,9 @@ import { Button } from "@/components/ui/button";
 import { ScrollAnimationWrapper } from "@/components/ScrollAnimationWrapper";
 import { ParallaxImage } from "@/components/ParallaxImage";
 import { Link } from "react-router-dom";
-import originalLondon from "@/assets/original-london.jpg";
-import originalNewYork from "@/assets/original-newyork.jpg";
-import originalTrunk from "@/assets/original-trunk.jpg";
+import storefrontLondon from "@/assets/storefront-london.jpg";
+import storefrontNewYork from "@/assets/storefront-newyork.jpg";
+import craftsmanship from "@/assets/craftsmanship.jpg";
 
 export const LocationsSection = () => {
   const locations = [
@@ -12,22 +12,22 @@ export const LocationsSection = () => {
       title: "LONDON",
       subtitle: "11 Savile Row",
       description: "Bespoke Tailoring",
-      image: originalLondon,
+      image: storefrontLondon,
       link: "/locations"
     },
     {
       title: "NEW YORK",
       subtitle: "W.57th St",
       description: "Bespoke Tailoring", 
-      image: originalNewYork,
+      image: storefrontNewYork,
       link: "/locations"
     },
     {
-      title: "USA",
-      subtitle: "Trunk Shows",
-      description: "Dates & Locations",
-      image: originalTrunk,
-      link: "/locations"
+      title: "CRAFTSMANSHIP",
+      subtitle: "Traditional Methods",
+      description: "Heritage & Excellence",
+      image: craftsmanship,
+      link: "/company"
     }
   ];
 

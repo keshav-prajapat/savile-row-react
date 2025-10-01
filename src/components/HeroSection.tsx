@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { useParallax } from '@/hooks/useParallax';
-import originalHero from "@/assets/original-hero.jpg";
+import { Link } from "react-router-dom";
+import heroLuxury from "@/assets/hero-luxury.jpg";
 
 export const HeroSection = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
@@ -17,11 +18,11 @@ export const HeroSection = () => {
         }}
       >
         <img 
-          src={originalHero}
+          src={heroLuxury}
           alt="Autumn-Winter 2025 Collection"
           className="w-full h-[120%] object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
       </div>
 
       {/* Content */}
@@ -32,15 +33,17 @@ export const HeroSection = () => {
           opacity: Math.max(0, 1 - scrollY / 800)
         }}
       >
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif tracking-wider mb-8 animate-fade-in">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif tracking-widest mb-8 animate-fade-in">
           AUTUMN-WINTER 2025 COLLECTION
         </h1>
-        <Button 
-          variant="outline" 
-          className="huntsman-button border-white text-white hover:bg-white hover:text-black animate-fade-in animation-delay-300"
-        >
-          SHOP THE COLLECTION
-        </Button>
+        <Link to="/ready-to-wear">
+          <Button 
+            variant="outline" 
+            className="border-2 border-white text-white hover:bg-white hover:text-black px-12 py-6 text-lg tracking-wider animate-fade-in animation-delay-300"
+          >
+            SHOP THE COLLECTION
+          </Button>
+        </Link>
       </div>
 
       {/* Video Controls */}

@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ScrollAnimationWrapper } from "@/components/ScrollAnimationWrapper";
 import { ParallaxImage } from "@/components/ParallaxImage";
 import { Link } from "react-router-dom";
-import originalSuiting from "@/assets/original-suiting.jpg";
+import collectionShowcase from "@/assets/collection-showcase.jpg";
 import jacketsImage from "@/assets/jackets.jpg";
 import outerwearImage from "@/assets/outerwear.jpg";
 import knitwearImage from "@/assets/knitwear.jpg";
@@ -33,7 +33,7 @@ export const ProductSection = () => {
         <ScrollAnimationWrapper animationType="scale-in">
           <div className="mb-16">
             <ParallaxImage
-              src={originalSuiting}
+              src={collectionShowcase}
               alt="Suiting Collection"
               className="h-[70vh] rounded-lg"
               parallaxOffset={0.2}

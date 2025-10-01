@@ -16,23 +16,23 @@ export const Footer = () => {
   return (
     <footer className="bg-background border-t">
       {/* Newsletter Section */}
-      <div className="py-16 bg-muted/30">
+      <div className="py-20 bg-muted/20">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-2xl font-serif mb-4">Join Our Mailing List</h2>
-          <p className="text-muted-foreground mb-8 max-w-md mx-auto">
+          <h2 className="text-3xl font-serif mb-4 tracking-wider">JOIN OUR MAILING LIST</h2>
+          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto text-sm">
             Stay up to date with our new arrivals, collection launches and all of the news from the world of Huntsman.
           </p>
-          <form onSubmit={handleNewsletterSubmit} className="max-w-md mx-auto flex gap-2">
+          <form onSubmit={handleNewsletterSubmit} className="max-w-md mx-auto flex gap-3">
             <Input
               type="email"
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="flex-1"
+              className="flex-1 bg-background"
               required
             />
-            <Button type="submit" className="bg-red-600 hover:bg-red-700 text-white px-8">
-              Confirm
+            <Button type="submit" className="bg-foreground hover:bg-foreground/90 text-background px-10">
+              SIGN UP
             </Button>
           </form>
         </div>
@@ -44,8 +44,8 @@ export const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Company Info */}
             <div>
-              <h3 className="font-serif text-lg mb-4">HUNTSMAN</h3>
-              <p className="text-sm text-muted-foreground mb-4">ESTABLISHED 1849</p>
+              <h3 className="font-serif text-xl mb-4 tracking-wider">HUNTSMAN</h3>
+              <p className="text-xs text-muted-foreground mb-4 tracking-widest">ESTABLISHED 1849</p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Savile Row's finest bespoke tailoring house, crafting exceptional menswear for over 170 years.
               </p>
@@ -53,83 +53,68 @@ export const Footer = () => {
 
             {/* Quick Links */}
             <div>
-              <h4 className="font-serif mb-4">Quick Links</h4>
+              <h4 className="font-serif mb-4 tracking-wide">SHOP</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/suiting" className="huntsman-link">Suiting</Link></li>
-                <li><Link to="/jackets" className="huntsman-link">Jackets</Link></li>
-                <li><Link to="/outerwear" className="huntsman-link">Outerwear</Link></li>
-                <li><Link to="/knitwear" className="huntsman-link">Knitwear</Link></li>
-                <li><Link to="/bespoke" className="huntsman-link">Bespoke</Link></li>
-                <li><Link to="/journal" className="huntsman-link">Journal</Link></li>
+                <li><Link to="/suiting" className="text-muted-foreground hover:text-foreground transition-colors">Suiting</Link></li>
+                <li><Link to="/jackets" className="text-muted-foreground hover:text-foreground transition-colors">Jackets</Link></li>
+                <li><Link to="/outerwear" className="text-muted-foreground hover:text-foreground transition-colors">Outerwear</Link></li>
+                <li><Link to="/knitwear" className="text-muted-foreground hover:text-foreground transition-colors">Knitwear</Link></li>
+                <li><Link to="/bespoke" className="text-muted-foreground hover:text-foreground transition-colors">Bespoke</Link></li>
               </ul>
             </div>
 
             {/* Customer Service */}
             <div>
-              <h4 className="font-serif mb-4">Customer Service</h4>
+              <h4 className="font-serif mb-4 tracking-wide">CUSTOMER SERVICE</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/contact" className="huntsman-link">Contact Us</Link></li>
-                <li><Link to="/locations" className="huntsman-link">Locations</Link></li>
-                <li><Link to="/faqs" className="huntsman-link">FAQs</Link></li>
-                <li><Link to="/book-appointment" className="huntsman-link">Book an Appointment</Link></li>
-                <li><Link to="/size-guide" className="huntsman-link">Size Guide</Link></li>
-                <li><Link to="/shipping" className="huntsman-link">Shipping & Returns</Link></li>
-                <li><Link to="/care-instructions" className="huntsman-link">Care Instructions</Link></li>
+                <li><Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact Us</Link></li>
+                <li><Link to="/locations" className="text-muted-foreground hover:text-foreground transition-colors">Locations</Link></li>
+                <li><Link to="/faqs" className="text-muted-foreground hover:text-foreground transition-colors">FAQs</Link></li>
+                <li><Link to="/book-appointment" className="text-muted-foreground hover:text-foreground transition-colors">Book Appointment</Link></li>
+                <li><Link to="/size-guide" className="text-muted-foreground hover:text-foreground transition-colors">Size Guide</Link></li>
+                <li><Link to="/shipping" className="text-muted-foreground hover:text-foreground transition-colors">Shipping</Link></li>
+                <li><Link to="/care-instructions" className="text-muted-foreground hover:text-foreground transition-colors">Care Instructions</Link></li>
               </ul>
             </div>
 
             {/* Contact Info */}
             <div>
-              <h4 className="font-serif mb-4">Contact Us</h4>
-              <div className="space-y-3 text-sm">
+              <h4 className="font-serif mb-4 tracking-wide">CONTACT</h4>
+              <div className="space-y-4 text-sm">
                 <div>
-                  <p className="font-medium">London</p>
+                  <p className="font-medium mb-1">LONDON</p>
                   <p className="text-muted-foreground">11 Savile Row</p>
                   <p className="text-muted-foreground">London W1S 3PS</p>
-                  <p className="text-muted-foreground">+44 20 7734 7441</p>
+                  <p className="text-muted-foreground mt-2">+44 20 7734 7441</p>
                 </div>
                 <div>
-                  <p className="font-medium">New York</p>
+                  <p className="font-medium mb-1">NEW YORK</p>
                   <p className="text-muted-foreground">57 W 57th Street</p>
                   <p className="text-muted-foreground">New York, NY 10019</p>
-                  <p className="text-muted-foreground">+1 646 590 2595</p>
+                  <p className="text-muted-foreground mt-2">+1 646 590 2595</p>
                 </div>
-                <div>
-                  <p className="huntsman-link">usa@huntsmansavilerow.com</p>
+                <div className="pt-2">
+                  <a href="mailto:usa@huntsmansavilerow.com" className="text-muted-foreground hover:text-foreground transition-colors">
+                    usa@huntsmansavilerow.com
+                  </a>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Social Media & Legal */}
-          <div className="pt-8 mt-8 border-t">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <div className="flex space-x-6 text-sm">
-                <a href="/pages/privacy-policy" className="huntsman-link">Privacy Policy</a>
-                <a href="/pages/terms-of-service" className="huntsman-link">Terms of Service</a>
-                <a href="/pages/cookies" className="huntsman-link">Cookie Policy</a>
+          <div className="pt-10 mt-10 border-t border-border/50">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+              <div className="flex gap-6 text-xs">
+                <Link to="/pages/privacy-policy" className="text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</Link>
+                <Link to="/pages/terms-of-service" className="text-muted-foreground hover:text-foreground transition-colors">Terms of Service</Link>
+                <Link to="/pages/cookies" className="text-muted-foreground hover:text-foreground transition-colors">Cookies</Link>
               </div>
               
-              <div className="flex items-center space-x-4">
-                <div className="flex space-x-3">
-                  <a href="#" className="w-8 h-8 bg-muted rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
-                    <span className="text-xs">f</span>
-                  </a>
-                  <a href="#" className="w-8 h-8 bg-muted rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
-                    <span className="text-xs">ig</span>
-                  </a>
-                  <a href="#" className="w-8 h-8 bg-muted rounded-full flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors">
-                    <span className="text-xs">tw</span>
-                  </a>
-                </div>
+              <div className="text-xs text-muted-foreground">
+                <p>&copy; 2025 H. Huntsman & Sons. All rights reserved.</p>
               </div>
             </div>
-          </div>
-
-          {/* Copyright */}
-          <div className="pt-6 text-center text-sm text-muted-foreground">
-            <p>&copy; 2025 H. Huntsman & Sons. All rights reserved.</p>
-            <p className="mt-2">Design & development by <a href="https://bitcube.tech/" className="huntsman-link">Bitcube</a></p>
           </div>
         </div>
       </div>

@@ -12,8 +12,8 @@ const navigationItems = [
     title: "Ready-to-Wear",
     href: "/ready-to-wear",
     submenu: [
-      { title: "Jackets", href: "/jackets" },
       { title: "Suiting", href: "/suiting" },
+      { title: "Jackets", href: "/jackets" },
       { title: "Knitwear", href: "/knitwear" },
       { title: "Outerwear", href: "/outerwear" }
     ]
@@ -27,17 +27,7 @@ const navigationItems = [
     ]
   },
   {
-    title: "Collections",
-    href: "#",
-    submenu: [
-      { title: "Winter Collection", href: "/collections/winter" },
-      { title: "Summer Collection", href: "/collections/summer" },
-      { title: "Formal Wear", href: "/collections/formal" },
-      { title: "Casual Wear", href: "/collections/casual" }
-    ]
-  },
-  {
-    title: "The Company",
+    title: "Company",
     href: "/company"
   },
   {
@@ -47,10 +37,6 @@ const navigationItems = [
   {
     title: "Journal",
     href: "/journal"
-  },
-  {
-    title: "Care Instructions",
-    href: "/care-instructions"
   }
 ];
 
@@ -105,33 +91,27 @@ export const Header = () => {
             {/* Center: Logo */}
             <div className="flex-1 flex justify-center">
               <Link to="/" className="text-center">
-                <h1 className="text-2xl font-serif tracking-wider">HUNTSMAN</h1>
-                <p className="text-xs text-muted-foreground tracking-wider">ESTABLISHED 1849</p>
+                <h1 className="text-2xl md:text-3xl font-serif tracking-[0.3em]">HUNTSMAN</h1>
+                <p className="text-[10px] text-muted-foreground tracking-[0.2em]">ESTABLISHED 1849</p>
               </Link>
             </div>
 
             {/* Right: Auth, Contact, Currency, Cart */}
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-3">
               <button 
                 className="p-2 hover:bg-muted rounded-sm transition-colors"
                 onClick={() => setIsAuthOpen(true)}
               >
                 <User className="h-5 w-5" />
               </button>
-              <Link 
-                to="/contact"
-                className="hidden md:block px-3 py-1 text-sm hover:bg-muted rounded-sm transition-colors"
-              >
-                CONTACT
-              </Link>
-              <select className="text-sm bg-transparent border-none focus:outline-none cursor-pointer">
+              <select className="text-xs bg-transparent border-none focus:outline-none cursor-pointer tracking-wider">
                 <option>USD $</option>
                 <option>GBP £</option>
                 <option>EUR €</option>
               </select>
               <button className="p-2 hover:bg-muted rounded-sm transition-colors relative">
                 <ShoppingBag className="h-5 w-5" />
-                <span className="absolute -top-1 -right-1 h-4 w-4 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 h-4 w-4 bg-foreground text-background text-xs rounded-full flex items-center justify-center">
                   0
                 </span>
               </button>
@@ -168,11 +148,11 @@ export const Header = () => {
       </header>
 
       {/* Contact Us Vertical Sidebar */}
-      <Link to="/contact" className="fixed right-0 top-1/2 -translate-y-1/2 z-40">
-        <div className="bg-red-600 text-white px-3 py-6 rounded-l-lg hover:bg-red-700 transition-colors">
-          <div className="flex flex-col items-center">
+      <Link to="/contact" className="fixed right-0 top-1/2 -translate-y-1/2 z-40 hover:pr-1 transition-all duration-300">
+        <div className="bg-foreground text-background px-2 py-8 rounded-l-lg shadow-lg">
+          <div className="flex flex-col items-center gap-1">
             {['C', 'O', 'N', 'T', 'A', 'C', 'T', ' ', 'U', 'S'].map((letter, index) => (
-              <span key={index} className="text-sm font-medium tracking-wider leading-tight">
+              <span key={index} className="text-xs font-medium tracking-wider">
                 {letter === ' ' ? '•' : letter}
               </span>
             ))}
@@ -198,27 +178,27 @@ export const Header = () => {
               </button>
             </div>
             
-            <nav className="p-6 space-y-2 overflow-y-auto h-full">
+            <nav className="p-6 space-y-2 overflow-y-auto h-[calc(100vh-200px)]">
               {navigationItems.map((item, index) => (
-                <div key={index} className="space-y-2">
+                <div key={index} className="space-y-2 border-b border-border/30 pb-4 mb-4 last:border-b-0">
                   {item.submenu ? (
                     <div>
                       <button
                         onClick={() => setExpandedSubmenu(expandedSubmenu === item.title ? null : item.title)}
                         className="flex items-center justify-between w-full text-left text-lg font-serif hover:text-primary transition-colors py-2"
                       >
-                        {item.title}
+                        <span className="tracking-wide">{item.title}</span>
                         <ChevronDown className={`h-4 w-4 transition-transform ${
                           expandedSubmenu === item.title ? 'rotate-180' : ''
                         }`} />
                       </button>
                       {expandedSubmenu === item.title && (
-                        <div className="ml-4 space-y-2 border-l border-border pl-4">
+                        <div className="ml-4 space-y-2 mt-2">
                           {item.submenu.map((subItem, subIndex) => (
                             <Link
                               key={subIndex}
                               to={subItem.href}
-                              className="block text-base hover:text-primary transition-colors py-1"
+                              className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-2"
                               onClick={() => setIsMenuOpen(false)}
                             >
                               {subItem.title}
@@ -230,7 +210,7 @@ export const Header = () => {
                   ) : (
                     <Link
                       to={item.href}
-                      className="block text-lg font-serif hover:text-primary transition-colors py-2"
+                      className="block text-lg font-serif hover:text-primary transition-colors py-2 tracking-wide"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.title}
@@ -241,13 +221,13 @@ export const Header = () => {
               
               <div className="pt-6 border-t space-y-4 mt-8">
                 <div>
-                  <h3 className="font-serif mb-2">Contact us</h3>
+                  <h3 className="font-serif mb-3 text-sm tracking-wider">CONTACT US</h3>
                   <p className="text-sm text-muted-foreground">+1 646 590 2595</p>
                   <p className="text-sm text-muted-foreground">usa@huntsmansavilerow.com</p>
                 </div>
                 <Link to="/book-appointment" onClick={() => setIsMenuOpen(false)}>
                   <Button variant="outline" className="w-full">
-                    Book an appointment
+                    BOOK AN APPOINTMENT
                   </Button>
                 </Link>
               </div>
