@@ -48,7 +48,7 @@ export const ProductSection = () => {
                   <p className="text-lg mb-8 leading-relaxed">
                     Cut in the Huntsman House silhouette, our ready-to-wear suits are designed for the discerning gentleman who values both time and tradition.
                   </p>
-                  <Link to="/suiting">
+                  <Link to="/collections/suits">
                     <Button 
                       variant="outline" 
                       className="huntsman-button border-white text-white hover:bg-white hover:text-black"

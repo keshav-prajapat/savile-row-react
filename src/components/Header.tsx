@@ -145,6 +145,21 @@ export const Header = () => {
             </div>
           )}
         </div>
+        
+        {/* Shop Now Banner Below Navbar */}
+        <div className={`border-t transition-all duration-500 ${
+          isTriggered ? 'bg-white' : 'bg-white/95'
+        }`}>
+          <div className="container mx-auto px-4 py-2">
+            <Link 
+              to="/collections/suits" 
+              className="flex items-center justify-center space-x-2 text-sm font-medium hover:text-primary transition-colors"
+            >
+              <span className="tracking-wider">SHOP NOW - SUITS COLLECTION</span>
+              <ChevronDown className="h-4 w-4 rotate-[-90deg]" />
+            </Link>
+          </div>
+        </div>
       </header>
 
       {/* Contact Us Vertical Sidebar */}

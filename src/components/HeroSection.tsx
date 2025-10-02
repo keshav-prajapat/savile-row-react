@@ -36,12 +36,12 @@ export const HeroSection = () => {
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif tracking-widest mb-8 animate-fade-in">
           AUTUMN-WINTER 2025 COLLECTION
         </h1>
-        <Link to="/ready-to-wear">
+        <Link to="/collections/autumn-winter-2025">
           <Button 
             variant="outline" 
             className="border-2 border-white text-white hover:bg-white hover:text-black px-12 py-6 text-lg tracking-wider animate-fade-in animation-delay-300"
           >
-            SHOP THE COLLECTION
+            SHOP NOW
           </Button>
         </Link>
       </div>
