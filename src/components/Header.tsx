@@ -13,7 +13,7 @@ const navigationItems = [
     href: "/ready-to-wear",
     submenu: [
       { title: "Suiting", href: "/suiting" },
-      { title: "Jackets", href: "/jackets" },
+      { title: "Jackets", href: "/collections/jackets" },
       { title: "Knitwear", href: "/knitwear" },
       { title: "Outerwear", href: "/outerwear" }
     ]

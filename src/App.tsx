@@ -24,6 +24,7 @@ import Shipping from "./pages/Shipping";
 import CareInstructions from "./pages/CareInstructions";
 import SuitsCollection from "./pages/SuitsCollection";
 import AutumnWinter from "./pages/AutumnWinter";
+import JacketsCollection from "./pages/JacketsCollection";
 
 const queryClient = new QueryClient();
 
@@ -54,6 +55,7 @@ const App = () => (
           <Route path="/care-instructions" element={<CareInstructions />} />
           <Route path="/collections/suits" element={<SuitsCollection />} />
           <Route path="/collections/autumn-winter-2025" element={<AutumnWinter />} />
+          <Route path="/collections/jackets" element={<JacketsCollection />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
