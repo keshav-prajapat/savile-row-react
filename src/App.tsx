@@ -27,6 +27,9 @@ import AutumnWinter from "./pages/AutumnWinter";
 import JacketsCollection from "./pages/JacketsCollection";
 import EveningwearCollection from "./pages/EveningwearCollection";
 import OuterwearCollection from "./pages/OuterwearCollection";
+import TiesCollection from "./pages/TiesCollection";
+import BespokeWomens from "./pages/BespokeWomens";
+import WorldOfHuntsman from "./pages/WorldOfHuntsman";
 
 const queryClient = new QueryClient();
 
@@ -60,6 +63,9 @@ const App = () => (
           <Route path="/collections/jackets" element={<JacketsCollection />} />
           <Route path="/collections/eveningwear" element={<EveningwearCollection />} />
           <Route path="/collections/outerwear" element={<OuterwearCollection />} />
+          <Route path="/collections/ties" element={<TiesCollection />} />
+          <Route path="/bespoke-womens" element={<BespokeWomens />} />
+          <Route path="/world-of-huntsman" element={<WorldOfHuntsman />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
