@@ -5,6 +5,7 @@ import { ProductSection } from "@/components/ProductSection";
 import { HeritageSection } from "@/components/HeritageSection";
 import { JournalSection } from "@/components/JournalSection";
 import { WomenswearSection } from "@/components/WomenswearSection";
+import { InstagramSection } from "@/components/InstagramSection";
 import { Footer } from "@/components/Footer";
 import { NewsletterModal } from "@/components/NewsletterModal";
 
@@ -20,6 +21,7 @@ const Index = () => {
         <JournalSection />
         <WomenswearSection />
       </main>
+      <InstagramSection />
       <Footer />
       <NewsletterModal />
     </div>
