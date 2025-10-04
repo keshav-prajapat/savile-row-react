@@ -30,6 +30,10 @@ import OuterwearCollection from "./pages/OuterwearCollection";
 import TiesCollection from "./pages/TiesCollection";
 import BespokeWomens from "./pages/BespokeWomens";
 import WorldOfHuntsman from "./pages/WorldOfHuntsman";
+import BespokeTailoring from "./pages/BespokeTailoring";
+import HuntsmanW57th from "./pages/HuntsmanW57th";
+import AboutTrunkShows from "./pages/AboutTrunkShows";
+import BespokeLifestyle from "./pages/BespokeLifestyle";
 
 const queryClient = new QueryClient();
 
@@ -66,6 +70,10 @@ const App = () => (
           <Route path="/collections/ties" element={<TiesCollection />} />
           <Route path="/bespoke-womens" element={<BespokeWomens />} />
           <Route path="/world-of-huntsman" element={<WorldOfHuntsman />} />
+          <Route path="/bespoke-tailoring" element={<BespokeTailoring />} />
+          <Route path="/huntsman-w57th" element={<HuntsmanW57th />} />
+          <Route path="/about-trunk-shows" element={<AboutTrunkShows />} />
+          <Route path="/bespoke-lifestyle" element={<BespokeLifestyle />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
